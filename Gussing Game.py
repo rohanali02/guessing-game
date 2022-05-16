@@ -2,9 +2,6 @@ import random
 import time
 import os
 
-res = "y"
-
-
 def clrscr():
     # Check if Operating System is Mac and Linux or Windows
     if os.name == 'posix':
@@ -72,11 +69,22 @@ elif ans == "no":
 else:
     print("Enter Yes or No Only")
 
-while (res):
+res = str(input("\nDo you want to try again? "))
+
+while res:
     if res.lower() == "y":
-        res = str(input("\nDo you want to try again? "))
         clrscr()
         guess()
         print()
+        res = str(input("\nDo you want to try again? "))
     else:
         quit()
+
+# while (res):
+#     if res.lower() == "y":
+#         res = str(input("\nDo you want to try again? "))
+#         clrscr()
+#         guess()
+#         print()
+#     else:
+#         quit()
